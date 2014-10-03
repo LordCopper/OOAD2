@@ -12,8 +12,8 @@
         <div id="mindiv" runat="server" > </div>
 
         <input id="Text1" type="text" runat="server"  /> <asp:DropDownList ID="DropDownList1" runat="server">
-                                                             <asp:ListItem Text="Eniro" Value="Eniro"></asp:ListItem>
-            <asp:ListItem Text="Allabolag" Value="Allabolag"></asp:ListItem>
+                                                             <asp:ListItem Text="Hitta.se" Value="Hitta.se"></asp:ListItem>
+            <asp:ListItem Text="Allabolag.se" Value="Allabolag.se"></asp:ListItem>
                                                          </asp:DropDownList>
 
         <asp:Button ID="Button1" runat="server" Text="Button" OnClientClick="knappKlickad" OnClick="Button1_Click"/>

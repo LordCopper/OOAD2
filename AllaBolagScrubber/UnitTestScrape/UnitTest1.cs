@@ -9,23 +9,24 @@ namespace ScreenScraperLib
     public class UnitTest1
     {
         [TestMethod]
-        public void TestToSeeIfPredetermendIDReturnsCorrectName()
+        public void TestAllaBolagToSeeIfPredetermendIDReturnsCorrectName()
         {
             var testVar = new ClassScrape();
             string testId = "5565995239";
-            string testResult = "Mattias Asplund Aktiebolag";
-
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+            string testResult = "Från Allabolag.se Mattias Asplund Aktiebolag";
+            string testFromWhatPage = "Allabolag.se";
+            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId, testFromWhatPage));
 
         }
 
+        [TestMethod]
         public void TestEniroToSeeIfPredetermendIDReturnsCorrectName()
         {
             var testVar = new ClassScrape();
             string testId = "5565995239";
-            string testResult = "Mattias Asplund Aktiebolag";
-
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+            string testResult = "Från Hitta.se Asplund Software";
+            string testFromWhatPage = "Hitta.se";
+            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId, testFromWhatPage));
 
         }
     }

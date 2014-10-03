@@ -10,26 +10,44 @@ namespace ScreenScraperLib
 {
     public interface IScrapeService
     {
-        string findNameByOrgID(string OrgID);
+        string findNameByOrgID(string OrgID, string fromWhatPage);
     }
 
 
     public class ClassScrape : IScrapeService
     {
 
-        public string findNameByOrgID(string OrgID)
+        public string findNameByOrgID(string OrgID, string fromWhatPage)
         {
             var getHtmlWeb = new HtmlWeb();
 
-            string url = "http://www.allabolag.se/" + OrgID.Replace("-", "");
+            string url = "";
+
             string orgName = "";
+            string whereToSelect = "";
+
+            if (fromWhatPage == "Hitta.se")
+            {
+                url = "http://www.hitta.se/sök?vad=" + OrgID.Replace("-", "");
+                whereToSelect = "//*[@id='item-details']/div[1]/h1";
+            }
+            else if (fromWhatPage == "Allabolag.se")
+            {
+                url = "http://www.allabolag.se/" + OrgID.Replace("-", "");
+               whereToSelect= "//*[@id='printTitle']";
+            }
+            else
+            {
+                return "Välj leverantör";
+            }
+            
             HtmlDocument document = getHtmlWeb.Load(url);
 
-            var nodes = document.DocumentNode.SelectNodes("//*[@id='printTitle']");
+            var nodes = document.DocumentNode.SelectNodes(whereToSelect);
 
             foreach (var name in nodes)
             {
-                orgName = name.InnerText;
+                orgName = "Från " +fromWhatPage+ " " + name.InnerText;
             }
 
             return orgName;
