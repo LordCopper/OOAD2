@@ -14,27 +14,27 @@ namespace AllaBolagScrubber
        
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ClassScrape newScrape = new ClassScrape();
 
-            mindiv.InnerHtml = newScrape.findNameByOrgID(Text1.Value, DropDownList1.SelectedValue);
 
             //var getHtmlWeb = new HtmlWeb();
             //string url = "";
             //string whereToSelect = "";
-            //if (DropDownList1.SelectedValue == "Hitta.se ")
-            //{
-            //    url = "http://www.hitta.se/asplund+software/tyres%C3%B6/~MsXvGKucE?vad=" + Text1.Value.Replace("-", "");
-            //    whereToSelect = "//*[@id='item-details']/div[1]/h1";
-            //}
-            //else if (DropDownList1.SelectedValue == "Allabolag.se ")
-            //{
-            //    url = "http://www.allabolag.se/" + Text1.Value.Replace("-", "");
-            //    whereToSelect="//*[@id='printTitle']";
-            //}
-            //else
-            //{
-            //    mindiv.InnerHtml = "Välj leverantör";
-            //}
+            if (DropDownList1.SelectedValue == "Hitta.se ")
+            {
+                ClassScrapeHitta newScrape = new ClassScrapeHitta();
+
+                mindiv.InnerHtml = newScrape.findNameByOrgID(Text1.Value);
+            }
+            else if (DropDownList1.SelectedValue == "Allabolag.se ")
+            {
+                ClassScrapeAllaBolag newScrape = new ClassScrapeAllaBolag();
+
+                mindiv.InnerHtml = newScrape.findNameByOrgID(Text1.Value);
+            }
+            else
+            {
+                mindiv.InnerHtml = "Välj leverantör";
+            }
 
             //HtmlDocument document = getHtmlWeb.Load(url);
 

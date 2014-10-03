@@ -11,22 +11,21 @@ namespace ScreenScraperLib
         [TestMethod]
         public void TestAllaBolagToSeeIfPredetermendIDReturnsCorrectName()
         {
-            var testVar = new ClassScrape();
+            var testVar = new ClassScrapeAllaBolag();
             string testId = "5565995239";
             string testResult = "Från Allabolag.se Mattias Asplund Aktiebolag";
-            string testFromWhatPage = "Allabolag.se";
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId, testFromWhatPage));
+            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
 
         }
 
         [TestMethod]
-        public void TestEniroToSeeIfPredetermendIDReturnsCorrectName()
+        public void TestHittaToSeeIfPredetermendIDReturnsCorrectName()
         {
-            var testVar = new ClassScrape();
+            var testVar = new ClassScrapeHitta();
             string testId = "5565995239";
             string testResult = "Från Hitta.se Asplund Software";
-            string testFromWhatPage = "Hitta.se";
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId, testFromWhatPage));
+
+            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
 
         }
     }

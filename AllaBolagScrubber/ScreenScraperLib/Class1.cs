@@ -10,44 +10,54 @@ namespace ScreenScraperLib
 {
     public interface IScrapeService
     {
-        string findNameByOrgID(string OrgID, string fromWhatPage);
+        string findNameByOrgID(string OrgID);
     }
 
 
-    public class ClassScrape : IScrapeService
+    public class ClassScrapeHitta : IScrapeService
     {
 
-        public string findNameByOrgID(string OrgID, string fromWhatPage)
+        public string findNameByOrgID(string OrgID)
         {
             var getHtmlWeb = new HtmlWeb();
 
-            string url = "";
+            string url = "http://www.hitta.se/sök?vad=" + OrgID.Replace("-", "");
 
             string orgName = "";
-            string whereToSelect = "";
+            string whereToSelect = "//*[@id='item-details']/div[1]/h1";
 
-            if (fromWhatPage == "Hitta.se")
-            {
-                url = "http://www.hitta.se/sök?vad=" + OrgID.Replace("-", "");
-                whereToSelect = "//*[@id='item-details']/div[1]/h1";
-            }
-            else if (fromWhatPage == "Allabolag.se")
-            {
-                url = "http://www.allabolag.se/" + OrgID.Replace("-", "");
-               whereToSelect= "//*[@id='printTitle']";
-            }
-            else
-            {
-                return "Välj leverantör";
-            }
-            
+
             HtmlDocument document = getHtmlWeb.Load(url);
 
             var nodes = document.DocumentNode.SelectNodes(whereToSelect);
 
             foreach (var name in nodes)
             {
-                orgName = "Från " +fromWhatPage+ " " + name.InnerText;
+                orgName = "Från Hitta.se " + name.InnerText;
+            }
+
+            return orgName;
+        }
+    }
+    public class ClassScrapeAllaBolag : IScrapeService
+    {
+    public string findNameByOrgID(string OrgID)
+        {
+            var getHtmlWeb = new HtmlWeb();
+
+            string url = "http://www.allabolag.se/" + OrgID.Replace("-", "");
+
+            string orgName = "";
+            string whereToSelect = "//*[@id='printTitle']";
+
+
+            HtmlDocument document = getHtmlWeb.Load(url);
+
+            var nodes = document.DocumentNode.SelectNodes(whereToSelect);
+
+            foreach (var name in nodes)
+            {
+                orgName = "Från AllaBolag" + name.InnerText;
             }
 
             return orgName;
