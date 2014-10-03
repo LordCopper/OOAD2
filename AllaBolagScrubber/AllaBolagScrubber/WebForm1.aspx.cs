@@ -16,25 +16,25 @@ namespace AllaBolagScrubber
         {
 
 
-            //var getHtmlWeb = new HtmlWeb();
-            //string url = "";
-            //string whereToSelect = "";
-            if (DropDownList1.SelectedValue == "Hitta.se")
-            {
-                ClassScrapeHitta newScrape = new ClassScrapeHitta();
+         
+            IScrapeService o = ScrapeServiceFactory.CreateScrapeService(DropDownList1.SelectedValue);
+           
+           mindiv.InnerHtml = o.findNameByOrgID(Text1.Value);
 
-                mindiv.InnerHtml = newScrape.findNameByOrgID(Text1.Value);
-            }
-            else if (DropDownList1.SelectedValue == "Allabolag.se")
-            {
-                ClassScrapeAllaBolag newScrape = new ClassScrapeAllaBolag();
 
-                mindiv.InnerHtml = newScrape.findNameByOrgID(Text1.Value);
-            }
-            else
-            {
-                mindiv.InnerHtml = "Välj leverantör";
-            }
+            //if (DropDownList1.SelectedValue == "Hitta.se")
+            //{
+            //    ClassScrapeHitta newScrape = new ClassScrapeHitta();
+
+            //    mindiv.InnerHtml = newScrape.findNameByOrgID(Text1.Value);
+            //}
+            //else if (DropDownList1.SelectedValue == "Allabolag.se")
+            //{
+            //    ClassScrapeAllaBolag newScrape = new ClassScrapeAllaBolag();
+
+            //    mindiv.InnerHtml = newScrape.findNameByOrgID(Text1.Value);
+            //}
+
 
             //HtmlDocument document = getHtmlWeb.Load(url);
 
@@ -42,10 +42,30 @@ namespace AllaBolagScrubber
 
             //foreach (var name in nodes)
             //{
-            //    mindiv.InnerHtml = "Från " + DropDownList1.SelectedValue+ " " + name.InnerText;
+            //    mindiv.InnerHtml = "Från " + DropDownList1.SelectedValue + " " + name.InnerText;
             //}
 
 
+        }
+    }
+
+    public static class ScrapeServiceFactory
+    {
+        public static IScrapeService CreateScrapeService(string type)
+        {
+            IScrapeService service = null;
+            switch (type)
+            {
+                case "Hitta.se": 
+                    service = new ClassScrapeHitta();
+                    break;
+                case "Allabolag.se":
+                    service = new ClassScrapeAllaBolag();
+                    break;
+
+                    }
+
+            return service;
         }
     }
 }

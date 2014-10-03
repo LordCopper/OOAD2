@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <div id="mindiv" runat="server" > </div>
+        <div id="mindiv" style="font-size: 40px"  runat="server" > </div>
 
         <input id="Text1" type="text" runat="server"  /> <asp:DropDownList ID="DropDownList1" runat="server">
                                                              <asp:ListItem Text="Hitta.se" Value="Hitta.se"></asp:ListItem>
