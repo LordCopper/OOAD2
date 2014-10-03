@@ -17,12 +17,12 @@ namespace AllaBolagScrubber
             var getHtmlWeb = new HtmlWeb();
             string url = "";
             string whereToSelect = "";
-            if (DropDownList1.SelectedValue == "Eniro")
+            if (DropDownList1.SelectedValue == "Hitta.se ")
             {
-                url = "http://gulasidorna.eniro.se/hitta:" + Text1.Value.Replace("-", "");
-                whereToSelect = "//span[@class='hit-company-name-ellipsis']";
+                url = "http://www.hitta.se/asplund+software/tyres%C3%B6/~MsXvGKucE?vad=" + Text1.Value.Replace("-", "");
+                whereToSelect = "//*[@id='item-details']/div[1]/h1";
             }
-            else if (DropDownList1.SelectedValue == "Allabolag")
+            else if (DropDownList1.SelectedValue == "Allabolag.se ")
             {
                 url = "http://www.allabolag.se/" + Text1.Value.Replace("-", "");
                 whereToSelect="//*[@id='printTitle']";

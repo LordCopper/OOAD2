@@ -18,5 +18,15 @@ namespace ScreenScraperLib
             Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
 
         }
+
+        public void TestEniroToSeeIfPredetermendIDReturnsCorrectName()
+        {
+            var testVar = new ClassScrape();
+            string testId = "5565995239";
+            string testResult = "Mattias Asplund Aktiebolag";
+
+            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+
+        }
     }
 }
