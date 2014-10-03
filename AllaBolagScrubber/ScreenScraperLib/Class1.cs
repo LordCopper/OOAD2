@@ -23,7 +23,7 @@ namespace ScreenScraperLib
 
             string url = "http://www.hitta.se/sök?vad=" + OrgID.Replace("-", "");
 
-            string orgName = "";
+            string orgName = "enrio";
             string whereToSelect = "//*[@id='item-details']/div[1]/h1";
 
 
@@ -47,7 +47,7 @@ namespace ScreenScraperLib
 
             string url = "http://www.allabolag.se/" + OrgID.Replace("-", "");
 
-            string orgName = "";
+            string orgName = "alla";
             string whereToSelect = "//*[@id='printTitle']";
 
 

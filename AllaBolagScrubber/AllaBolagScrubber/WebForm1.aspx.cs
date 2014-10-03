@@ -19,13 +19,13 @@ namespace AllaBolagScrubber
             //var getHtmlWeb = new HtmlWeb();
             //string url = "";
             //string whereToSelect = "";
-            if (DropDownList1.SelectedValue == "Hitta.se ")
+            if (DropDownList1.SelectedValue == "Hitta.se")
             {
                 ClassScrapeHitta newScrape = new ClassScrapeHitta();
 
                 mindiv.InnerHtml = newScrape.findNameByOrgID(Text1.Value);
             }
-            else if (DropDownList1.SelectedValue == "Allabolag.se ")
+            else if (DropDownList1.SelectedValue == "Allabolag.se")
             {
                 ClassScrapeAllaBolag newScrape = new ClassScrapeAllaBolag();
 
