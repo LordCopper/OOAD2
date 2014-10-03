@@ -20,7 +20,7 @@ namespace AllaBolagScrubber
             if (DropDownList1.SelectedValue == "Eniro")
             {
                 url = "http://gulasidorna.eniro.se/hitta:" + Text1.Value.Replace("-", "");
-                whereToSelect = "//span[@class='hit-company-name-ellipsis']";
+                whereToSelect = "//span[@class='stripped-link lightblue-link profile-page-link addax addax-cs_hl_hit_company_name_click']";
             }
             else if (DropDownList1.SelectedValue == "Allabolag")
             {
@@ -40,8 +40,6 @@ namespace AllaBolagScrubber
             {
                 mindiv.InnerHtml = "Från " + DropDownList1.SelectedValue+ " " + name.InnerText;
             }
-                
-
         }
     }
 }
