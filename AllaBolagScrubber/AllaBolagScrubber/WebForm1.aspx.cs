@@ -10,20 +10,14 @@ namespace AllaBolagScrubber
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-           
-
-
-        }
-
+       
         protected void Button1_Click(object sender, EventArgs e)
         {
             var getHtmlWeb = new HtmlWeb();
 
-            string url = "http://www.allabolag.se/"+Text1.Value;
+            string url = "http://www.allabolag.se/"+Text1.Value.Replace("-", "");
 
-            HtmlDocument document = getHtmlWeb.Load(url);
+        HtmlDocument document = getHtmlWeb.Load(url);
 
             var nodes = document.DocumentNode.SelectNodes("//*[@id='printTitle']");
 
