@@ -11,7 +11,7 @@
     <div>
         <div id="mindiv" runat="server" > </div>
 
-        <input id="Text1" type="text" runat="server"  /> <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <input id="Text1" type="text" runat="server"  /> <asp:DropDownList ID="DropDownList1" runat="server">
                                                              <asp:ListItem Text="Eniro" Value="Eniro"></asp:ListItem>
             <asp:ListItem Text="Allabolag" Value="Allabolag"></asp:ListItem>
                                                          </asp:DropDownList>

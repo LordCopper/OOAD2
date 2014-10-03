@@ -42,7 +42,7 @@ namespace AllaBolagScrubber
 
             foreach (var name in nodes)
             {
-                mindiv.InnerHtml = "Från eniro" + name.InnerText;
+                mindiv.InnerHtml = "Från eniro  " + name.InnerText;
             }
             
         }
