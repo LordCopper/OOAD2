@@ -57,7 +57,7 @@ namespace ScreenScraperLib
 
             foreach (var name in nodes)
             {
-                orgName = "Från AllaBolag.se " + name.InnerText;
+                orgName = "Från Allabolag.se " + name.InnerText;
             }
 
             return orgName;
