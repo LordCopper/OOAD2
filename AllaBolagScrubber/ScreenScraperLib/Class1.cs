@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace ScreenScraperLib
 {
-    public class Class1
+    public interface ScrapeService
     {
-   
+        
+    }
+
+
+    public class ClassScrape : ScrapeService
+    {
+    
+
     
     }
 }
