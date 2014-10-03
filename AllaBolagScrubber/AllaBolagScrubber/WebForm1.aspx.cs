@@ -13,60 +13,35 @@ namespace AllaBolagScrubber
        
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            var getHtmlWeb = new HtmlWeb();
+            string url = "";
+            string whereToSelect = "";
             if (DropDownList1.SelectedValue == "Eniro")
             {
-                Eniro();
-                
+                url = "http://gulasidorna.eniro.se/hitta:" + Text1.Value.Replace("-", "");
+                whereToSelect = "//span[@class='hit-company-name-ellipsis']";
             }
             else if (DropDownList1.SelectedValue == "Allabolag")
             {
-                Allabolag();
+                url = "http://www.allabolag.se/" + Text1.Value.Replace("-", "");
+                whereToSelect="//*[@id='printTitle']";
             }
-
             else
             {
                 mindiv.InnerHtml = "Välj leverantör";
             }
 
-        }
-
-        void Allabolag()
-        {
-            var getHtmlWeb = new HtmlWeb();
-
-            string url = "http://www.allabolag.se/" + Text1.Value.Replace("-", "");
-
             HtmlDocument document = getHtmlWeb.Load(url);
 
-            var nodes = document.DocumentNode.SelectNodes("//*[@id='printTitle']");
+            var nodes = document.DocumentNode.SelectNodes(whereToSelect);
 
             foreach (var name in nodes)
             {
-                mindiv.InnerHtml = "Från eniro  " + name.InnerText;
+                mindiv.InnerHtml = "Från " + DropDownList1.SelectedValue+ " " + name.InnerText;
             }
-            
-        }
-
-        void Eniro()
-        {
-            var getHtmlWeb = new HtmlWeb();
-
-            string url = "http://gulasidorna.eniro.se/hitta:" + Text1.Value.Replace("-", "");
-
-            HtmlDocument document = getHtmlWeb.Load(url);
-
-            var nodes = document.DocumentNode.SelectNodes("//span[@class='hit-company-name-ellipsis']");
-
-            foreach (var name in nodes)
-            {
-                mindiv.InnerHtml = "Från allabolag" + name.InnerText;
-            }
-            
+                
 
         }
-
-
-        
-
     }
 }
