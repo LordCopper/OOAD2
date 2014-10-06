@@ -13,8 +13,9 @@ namespace ScreenScraperLib
         public void TestAllaBolagToSeeIfPredetermendIdReturnsCorrectName()
         {
             var testVar = new ClassScrapeAllaBolag();
-           string testResult = "Från Allabolag.se Mattias Asplund Aktiebolag";
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+            string expected = "Från Allabolag.se Mattias Asplund Aktiebolag";
+            string actual = testVar.findNameByOrgID(testId);
+            Assert.AreEqual(expected, actual);
 
         }
 
@@ -22,8 +23,9 @@ namespace ScreenScraperLib
         public void TestHittaToSeeIfPredetermendIdReturnsCorrectName()
         {
             var testVar = new ClassScrapeHitta();
-           string testResult = "Från Hitta.se Asplund Software";
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+           string expected = "Från Hitta.se Asplund Software";
+           string actual = testVar.findNameByOrgID(testId);
+           Assert.AreEqual(expected, actual);
 
         }
 
@@ -31,8 +33,9 @@ namespace ScreenScraperLib
         public void TestEniroToSeeIfPredetermendIdReturnsCorrectName()
         {
             var testVar = new ClassScrapeEniro();
-            string testResult = "Från Eniro.se Mattias Asplund AB";
-            Assert.AreEqual(testResult,testVar.findNameByOrgID(testId).TrimEnd());
+            string expected = "Från Eniro.se Mattias Asplund AB";
+            string actual = testVar.findNameByOrgID(testId);
+            Assert.AreEqual(expected,actual);
         }
         [TestMethod]
         public void TestUpplysningToSeeIfPredetermendIdReturnsCorrectName()
