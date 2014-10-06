@@ -23,7 +23,7 @@ namespace ScreenScraperLib
 
             string url = "http://www.hitta.se/sök?vad=" + OrgID.Replace("-", "");
 
-            string orgName = "enrio";
+            string orgName = string.Empty;
             string whereToSelect = "//*[@id='item-details']/div[1]/h1";
 
 
@@ -47,7 +47,7 @@ namespace ScreenScraperLib
 
             string url = "http://www.allabolag.se/" + OrgID.Replace("-", "");
 
-            string orgName = "alla";
+            string orgName = string.Empty;
             string whereToSelect = "//*[@id='printTitle']";
 
 
@@ -58,6 +58,32 @@ namespace ScreenScraperLib
             foreach (var name in nodes)
             {
                 orgName = "Från Allabolag.se " + name.InnerText;
+            }
+
+            return orgName;
+        }
+    }
+
+    public class ClassScrapeEniro : IScrapeService
+    {
+
+        public string findNameByOrgID(string OrgID)
+        {
+            var getHtmlWeb = new HtmlWeb();
+
+            string url = "http://gulasidorna.eniro.se/hitta:" + OrgID.Replace("-", "");
+
+            string orgName = string.Empty;
+            string whereToSelect = "//*[@id='hit-list']/li/article/header/div[2]/h2/span/a";
+
+
+            HtmlDocument document = getHtmlWeb.Load(url);
+
+            var nodes = document.DocumentNode.SelectNodes(whereToSelect);
+
+            foreach (var name in nodes)
+            {
+                orgName = "Från Eniro.se " + name.InnerText;
             }
 
             return orgName;

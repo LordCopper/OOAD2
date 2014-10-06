@@ -8,25 +8,31 @@ namespace ScreenScraperLib
     [TestClass]
     public class UnitTest1
     {
+        string testId = "5565995239";
         [TestMethod]
-        public void TestAllaBolagToSeeIfPredetermendIDReturnsCorrectName()
+        public void TestAllaBolagToSeeIfPredetermendIdReturnsCorrectName()
         {
             var testVar = new ClassScrapeAllaBolag();
-            string testId = "5565995239";
-            string testResult = "Från Allabolag.se Mattias Asplund Aktiebolag";
+           string testResult = "Från Allabolag.se Mattias Asplund Aktiebolag";
             Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
 
         }
 
         [TestMethod]
-        public void TestHittaToSeeIfPredetermendIDReturnsCorrectName()
+        public void TestHittaToSeeIfPredetermendIdReturnsCorrectName()
         {
             var testVar = new ClassScrapeHitta();
-            string testId = "5565995239";
-            string testResult = "Från Hitta.se Asplund Software";
-
+           string testResult = "Från Hitta.se Asplund Software";
             Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
 
+        }
+
+        [TestMethod]
+        public void TestEniroToSeeIfPredetermendIdReturnsCorrectName()
+        {
+            var testVar = new ClassScrapeEniro();
+            string testResult = "Från Eniro.se Mattias Asplund AB";
+            Assert.AreEqual(testResult,testVar.findNameByOrgID(testId));
         }
     }
 }
