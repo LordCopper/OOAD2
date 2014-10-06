@@ -63,5 +63,21 @@ namespace ScreenScraperLib
             TestAllaBolagToSeeIfPredetermendIdReturnsCorrectName();
             timer.Stop();
         }
+        [TestMethod]
+        public void TestTimeEllapsedForAllSitesAsync()
+        {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            TestUpplysningToSeeIfPredetermendIdReturnsCorrectName();
+
+            //timer.Start();
+            //TestEniroToSeeIfPredetermendIdReturnsCorrectName();
+            //timer.Stop();
+
+            TestHittaToSeeIfPredetermendIdReturnsCorrectName();
+
+            TestAllaBolagToSeeIfPredetermendIdReturnsCorrectName();
+            timer.Stop();
+        }
     }
 }
