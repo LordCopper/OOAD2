@@ -89,4 +89,29 @@ namespace ScreenScraperLib
             return orgName;
         }
     }
+    public class ClassScrapeUpplysning : IScrapeService
+    {
+
+        public string findNameByOrgID(string OrgID)
+        {
+            var getHtmlWeb = new HtmlWeb();
+
+            string url = "http://www.upplysning.se/foretag/?x=395&what=" + OrgID.Replace("-", "");
+
+            string orgName = string.Empty;
+            string whereToSelect = "//*[@id='dataheader']/b";
+
+
+            HtmlDocument document = getHtmlWeb.Load(url);
+
+            var nodes = document.DocumentNode.SelectNodes(whereToSelect);
+
+            foreach (var name in nodes)
+            {
+                orgName = "Från Upplysning.se " + name.InnerText;
+            }
+
+            return orgName;
+        }
+    }
 }

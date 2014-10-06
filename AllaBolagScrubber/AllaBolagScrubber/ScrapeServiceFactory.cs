@@ -23,6 +23,9 @@ namespace AllaBolagScrubber
                 case "Eniro.se":
                     service = new ClassScrapeEniro();
                     break;
+                case "Upplysning.se":
+                    service = new ClassScrapeUpplysning();
+                    break;
 
             }
 

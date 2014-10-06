@@ -15,6 +15,8 @@
                                                              <asp:ListItem Text="Hitta.se" Value="Hitta.se"></asp:ListItem>
             <asp:ListItem Text="Allabolag.se" Value="Allabolag.se"></asp:ListItem>
             <asp:ListItem Text="Eniro.se" Value="Eniro.se"></asp:ListItem>
+                        <asp:ListItem Text="Upplysning.se" Value="Upplysning.se"></asp:ListItem>
+
                                                          </asp:DropDownList>
 
         <asp:Button ID="Button1" runat="server" Text="Sök" OnClientClick="knappKlickad" OnClick="Button1_Click"/>

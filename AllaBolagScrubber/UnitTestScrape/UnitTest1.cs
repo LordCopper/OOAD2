@@ -34,5 +34,13 @@ namespace ScreenScraperLib
             string testResult = "Från Eniro.se Mattias Asplund AB";
             Assert.AreEqual(testResult,testVar.findNameByOrgID(testId));
         }
+        [TestMethod]
+        public void TestUpplysningToSeeIfPredetermendIdReturnsCorrectName()
+        {
+            var testVar = new ClassScrapeUpplysning();
+            string expected = "Från Upplysning.se Mattias Asplund Aktiebolag";
+            string actual = testVar.findNameByOrgID(testId);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
