@@ -45,25 +45,20 @@ namespace ScreenScraperLib
         }
         
         [TestMethod]
-        public void TestTimeEllapsedForAllSites()
+        public void TestTimeEllapsedForAllSitesSeries()
         {
             Stopwatch timer = new Stopwatch();
             timer.Start();
             TestUpplysningToSeeIfPredetermendIdReturnsCorrectName();
-            timer.Stop();
 
-            timer.Start();
-            TestEniroToSeeIfPredetermendIdReturnsCorrectName();
-            timer.Stop();
-            
-            timer.Start();
+            //timer.Start();
+            //TestEniroToSeeIfPredetermendIdReturnsCorrectName();
+            //timer.Stop();
+
             TestHittaToSeeIfPredetermendIdReturnsCorrectName();
-            timer.Stop();
-            
-            timer.Start();
+
             TestAllaBolagToSeeIfPredetermendIdReturnsCorrectName();
             timer.Stop();
-
         }
     }
 }
