@@ -32,7 +32,7 @@ namespace ScreenScraperLib
         {
             var testVar = new ClassScrapeEniro();
             string testResult = "Från Eniro.se Mattias Asplund AB";
-            Assert.AreEqual(testResult,testVar.findNameByOrgID(testId));
+            Assert.AreEqual(testResult,testVar.findNameByOrgID(testId).TrimEnd());
         }
     }
 }
