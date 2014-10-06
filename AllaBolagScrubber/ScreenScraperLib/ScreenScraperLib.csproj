@@ -43,6 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ClassScrapeAllaBolag.cs" />
+    <Compile Include="ClassScrapeEniro.cs" />
+    <Compile Include="ClassScrapeHitta.cs" />
+    <Compile Include="ClassScrapeUpplysning.cs" />
+    <Compile Include="CompanyScraper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
