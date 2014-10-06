@@ -72,7 +72,7 @@ namespace ScreenScraperLib
         {
             var testVar = new ClassScrapeAllaBolag();
             string testResult = "Från Allabolag.se Mattias Asplund Aktiebolag";
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+            Assert.AreEqual(testResult, (await testVar.findNameByOrgIDAsync(testId)));
 
         }
 
@@ -81,7 +81,7 @@ namespace ScreenScraperLib
         {
             var testVar = new ClassScrapeHitta();
             string testResult = "Från Hitta.se Asplund Software";
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+            Assert.AreEqual(testResult, (await testVar.findNameByOrgIDAsync(testId)));
 
         }
 
@@ -90,14 +90,14 @@ namespace ScreenScraperLib
         {
             var testVar = new ClassScrapeEniro();
             string testResult = "Från Eniro.se Mattias Asplund AB";
-            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId).TrimEnd());
+            Assert.AreEqual(testResult, (await testVar.findNameByOrgIDAsync(testId)).TrimEnd());
         }
         [TestMethod]
         async Task TestUpplysningToSeeIfPredetermendIdReturnsCorrectNameToAsync()
         {
             var testVar = new ClassScrapeUpplysning();
             string expected = "Från Upplysning.se Mattias Asplund Aktiebolag";
-            string actual = testVar.findNameByOrgID(testId);
+            var actual = (await testVar.findNameByOrgIDAsync(testId));
             Assert.AreEqual(expected, actual);
         }
         
@@ -109,9 +109,7 @@ namespace ScreenScraperLib
 
             TestUpplysningToSeeIfPredetermendIdReturnsCorrectNameToAsync();
 
-            //timer.Start();
-            //TestEniroToSeeIfPredetermendIdReturnsCorrectName();
-            //timer.Stop();
+            //TestEniroToSeeIfPredetermendIdReturnsCorrectNameToAsync();
 
             TestHittaToSeeIfPredetermendIdReturnsCorrectNameToAsync();
 
