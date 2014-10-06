@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Threading.Tasks;
 using ScreenScraperLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,13 +29,13 @@ namespace ScreenScraperLib
 
         }
 
-        [TestMethod]
-        public void TestEniroToSeeIfPredetermendIdReturnsCorrectName()
-        {
-            var testVar = new ClassScrapeEniro();
-            string testResult = "Från Eniro.se Mattias Asplund AB";
-            Assert.AreEqual(testResult,testVar.findNameByOrgID(testId).TrimEnd());
-        }
+        //[TestMethod]
+        //public void TestEniroToSeeIfPredetermendIdReturnsCorrectName()
+        //{
+        //    var testVar = new ClassScrapeEniro();
+        //    string testResult = "Från Eniro.se Mattias Asplund AB";
+        //    Assert.AreEqual(testResult,testVar.findNameByOrgID(testId).TrimEnd());
+        //}
         [TestMethod]
         public void TestUpplysningToSeeIfPredetermendIdReturnsCorrectName()
         {
@@ -59,6 +60,64 @@ namespace ScreenScraperLib
 
             TestAllaBolagToSeeIfPredetermendIdReturnsCorrectName();
             timer.Stop();
+            Console.WriteLine(timer.Elapsed.ToString());
+        }
+
+        /// <summary>
+        /// Async Part
+        /// </summary>
+
+        [TestMethod]
+        async Task TestAllaBolagToSeeIfPredetermendIdReturnsCorrectNameToAsync()
+        {
+            var testVar = new ClassScrapeAllaBolag();
+            string testResult = "Från Allabolag.se Mattias Asplund Aktiebolag";
+            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+
+        }
+
+        [TestMethod]
+        async Task TestHittaToSeeIfPredetermendIdReturnsCorrectNameToAsync()
+        {
+            var testVar = new ClassScrapeHitta();
+            string testResult = "Från Hitta.se Asplund Software";
+            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId));
+
+        }
+
+        [TestMethod]
+        async Task TestEniroToSeeIfPredetermendIdReturnsCorrectNameToAsync()
+        {
+            var testVar = new ClassScrapeEniro();
+            string testResult = "Från Eniro.se Mattias Asplund AB";
+            Assert.AreEqual(testResult, testVar.findNameByOrgID(testId).TrimEnd());
+        }
+        [TestMethod]
+        async Task TestUpplysningToSeeIfPredetermendIdReturnsCorrectNameToAsync()
+        {
+            var testVar = new ClassScrapeUpplysning();
+            string expected = "Från Upplysning.se Mattias Asplund Aktiebolag";
+            string actual = testVar.findNameByOrgID(testId);
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [TestMethod]
+        public void TestTimeEllapsedForAllSitesParallel()
+        {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            TestUpplysningToSeeIfPredetermendIdReturnsCorrectNameToAsync();
+
+            //timer.Start();
+            //TestEniroToSeeIfPredetermendIdReturnsCorrectName();
+            //timer.Stop();
+
+            TestHittaToSeeIfPredetermendIdReturnsCorrectNameToAsync();
+
+            TestAllaBolagToSeeIfPredetermendIdReturnsCorrectNameToAsync();
+            timer.Stop();
+            Console.WriteLine(timer.Elapsed.ToString());
         }
     }
 }
