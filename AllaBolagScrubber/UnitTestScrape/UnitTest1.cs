@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using ScreenScraperLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -44,6 +45,28 @@ namespace ScreenScraperLib
             string expected = "Från Upplysning.se Mattias Asplund Aktiebolag";
             string actual = testVar.findNameByOrgID(testId);
             Assert.AreEqual(expected, actual);
+        }
+        
+        [TestMethod]
+        public void TestTimeEllapsedForAllSites()
+        {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            TestUpplysningToSeeIfPredetermendIdReturnsCorrectName();
+            timer.Stop();
+
+            timer.Start();
+            TestEniroToSeeIfPredetermendIdReturnsCorrectName();
+            timer.Stop();
+            
+            timer.Start();
+            TestHittaToSeeIfPredetermendIdReturnsCorrectName();
+            timer.Stop();
+            
+            timer.Start();
+            TestAllaBolagToSeeIfPredetermendIdReturnsCorrectName();
+            timer.Stop();
+
         }
     }
 }

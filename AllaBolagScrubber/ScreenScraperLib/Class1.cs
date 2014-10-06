@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -13,12 +14,14 @@ namespace ScreenScraperLib
         string findNameByOrgID(string OrgID);
     }
 
-
+    
     public class ClassScrapeHitta : IScrapeService
     {
 
         public string findNameByOrgID(string OrgID)
         {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
             var getHtmlWeb = new HtmlWeb();
 
             string url = "http://www.hitta.se/sök?vad=" + OrgID.Replace("-", "");
@@ -35,8 +38,10 @@ namespace ScreenScraperLib
             {
                 orgName = "Från Hitta.se " + name.InnerText;
             }
-
+            
             return orgName;
+            timer.Stop();
+            TimeSpan timetaken = timer.Elapsed;
         }
     }
     public class ClassScrapeAllaBolag : IScrapeService
