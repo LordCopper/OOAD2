@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-    public class NackademinEducation
+    public class NackademinEducation : IEducation
     {
-
+        public string InviteStudents { get; set; }
+        public string AssignTeacher { get; set; }
+        public string ProcessStudentFeedback { get; set; }
     }
 
 }
