@@ -9,7 +9,7 @@ namespace ClassLib
     public class NackademinBuilder : EducationBuilder
     {
 
-        private IEducation education = new NackademinEducation();
+        private IEducation education = new EducationNackademin();
         public override void AssignTeacher()
         {
             education.AssignTeacher = "Kurt";
