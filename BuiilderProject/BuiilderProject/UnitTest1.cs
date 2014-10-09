@@ -25,6 +25,7 @@ namespace BuilderProject
             Assert.AreEqual(expectedProcessStudentFeedback, actualFeedback);
 
         }
+          [TestMethod]
         public void TestAssignTeacherJensen()
         {
             var builder = new NackademinBuilder();

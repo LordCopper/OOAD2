@@ -8,7 +8,18 @@ namespace ClassLib
 {
     public class NackademinEducation
     {
-
+        //public string InviteStudents {
+        //    get { return "200"; }
+            
+        //}
+        //public string AssignTeacher 
+        //{
+        //    get { return "Kurt"; }
+        //}
+        //public string ProcessStudentFeedback
+        //{
+        //    get { return "Good"; }
+        //}
     }
 
 }
