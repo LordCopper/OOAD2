@@ -25,13 +25,22 @@ namespace BuilderProject
             Assert.AreEqual(expectedProcessStudentFeedback, actualFeedback);
 
         }
-        public void TestInviteStudentsNackademin()
+        public void TestAssignTeacherJensen()
         {
-        
+            var builder = new NackademinBuilder();
+            var director = new NackademinDirector();
+            var education = director.Build(builder);
+            string expectedteacher = "Mattias";
+            string expectedstudents = "300";
+            string expectedProcessStudentFeedback = "The Greatest";
+            string actualteacher = education.AssignTeacher;
+            string actualstudents = education.InviteStudents;
+            string actualFeedback = education.ProcessStudentFeedback;
+            Assert.AreEqual(expectedteacher, actualteacher);
+            Assert.AreEqual(expectedstudents, expectedstudents);
+            Assert.AreEqual(expectedProcessStudentFeedback, actualFeedback);
+
         }
-        public void TestProcessStudentFeedback()
-        {
-        
-        }
+    
     }
 }

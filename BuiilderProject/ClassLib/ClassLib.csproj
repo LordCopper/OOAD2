@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NackademinEducation.cs" />
     <Compile Include="EducationBuilder.cs" />
     <Compile Include="EducationDirector.cs" />
     <Compile Include="IEducation.cs" />

@@ -8,6 +8,8 @@ namespace ClassLib
 {
    public class NackademinBuilder : EducationBuilder
     {
+     
+       private IEducation education;
        public override void AssignTeacher()
        {
            Education.AssignTeacher = "Kurt";
@@ -25,7 +27,7 @@ namespace ClassLib
 
        public override IEducation Education
        {
-           get { return Education; }
+           get { return education; }
        }
     }
 }
