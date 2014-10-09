@@ -23,9 +23,9 @@ namespace BuilderProject
             Assert.AreEqual(expectedteacher, actualteacher);
             Assert.AreEqual(expectedstudents, expectedstudents);
             Assert.AreEqual(expectedProcessStudentFeedback, actualFeedback);
-
         }
-          [TestMethod]
+
+        [TestMethod]
         public void TestAssignTeacherJensen()
         {
             var builder = new JensenBuilder();
@@ -40,8 +40,6 @@ namespace BuilderProject
             Assert.AreEqual(expectedteacher, actualteacher);
             Assert.AreEqual(expectedstudents, expectedstudents);
             Assert.AreEqual(expectedProcessStudentFeedback, actualFeedback);
-
         }
-    
     }
 }
