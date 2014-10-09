@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-    public class JensenEducation
+    public class JensenEducation 
     {
         public string InviteStudents { get; set; }
         public string AsignTeacher { get; set; }

@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-   public class NackademinBuilder : EducationBuilder
+    public class NackademinBuilder : EducationBuilder
     {
-     
-       private IEducation education =new NackademinEducation();
-       public override void AssignTeacher()
-       {
-           education.AssignTeacher = "Kurt";
-       }
 
-       public override void InviteStudents()
-       {
-           Education.InviteStudents = "200";
-       }
+        private IEducation education = new NackademinEducation();
+        public override void AssignTeacher()
+        {
+            education.AssignTeacher = "Kurt";
+        }
 
-       public override void ProcessStudentFeedback()
-       {
-           Education.ProcessStudentFeedback = "Good";
-       }
+        public override void InviteStudents()
+        {
+            Education.InviteStudents = "200";
+        }
 
-       public override IEducation Education
-       {
-           get { return education; }
-       }
+        public override void ProcessStudentFeedback()
+        {
+            Education.ProcessStudentFeedback = "Good";
+        }
+
+        public override IEducation Education
+        {
+            get { return education; }
+        }
     }
 }
