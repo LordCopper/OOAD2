@@ -9,24 +9,9 @@ namespace ClassLib
 {
     public abstract class EducationBuilder
     {
-
-
-        public virtual void AssignTeacher()
-        {
-
-        }
-
-        public virtual void InviteStudents()
-        {
-
-        }
-
-        public virtual void ProcessStudentFeedback()
-        {
-
-        }
-
-        public abstract IEducation Education { get;  }
+       public virtual void AssignTeacher(){}
+       public virtual void InviteStudents(){}
+       public virtual void ProcessStudentFeedback(){}
+       public abstract IEducation Education { get;  }
     }
-
 }
