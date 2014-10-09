@@ -9,7 +9,5 @@ namespace ClassLib
   public abstract class EducationDirector
   {
       public abstract IEducation Build(EducationBuilder builder);
-
-
   }
 }
