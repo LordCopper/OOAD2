@@ -11,15 +11,7 @@ namespace ClassLib
         public string InviteStudents { get; set; }
         public string AssignTeacher { get; set; }
         public string ProcessStudentFeedback { get; set; }
-        //}
-        //public string AssignTeacher 
-        //{
-        //    get { return "Kurt"; }
-        //}
-        //public string ProcessStudentFeedback
-        //{
-        //    get { return "Good"; }
-        //}
+      
     }
 
 }

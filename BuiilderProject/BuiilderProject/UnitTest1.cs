@@ -28,8 +28,8 @@ namespace BuilderProject
           [TestMethod]
         public void TestAssignTeacherJensen()
         {
-            var builder = new NackademinBuilder();
-            var director = new NackademinDirector();
+            var builder = new JensenBuilder();
+            var director = new JensenDirector();
             var education = director.Build(builder);
             string expectedteacher = "Mattias";
             string expectedstudents = "300";
