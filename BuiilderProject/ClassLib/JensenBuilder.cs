@@ -8,20 +8,24 @@ namespace ClassLib
 {
    public class JensenBuilder : EducationBuilder
    {
-       public override IEducation Education = new JensenEducation();
-       public override string InviteStudents()
+       public override void AssignTeacher()
        {
-          
+           Education.AssignTeacher = "1";
        }
 
-       public override string AssignTeacher()
+       public override void InviteStudents()
        {
-           return base.AssignTeacher();
+           Education.InviteStudents = "2";
        }
 
-       public override string ProcessStudentFeedback()
+       public override void ProcessStudentFeedback()
        {
-           return base.ProcessStudentFeedback();
+           Education.ProcessStudentFeedback = "3";
        }
-    }
+
+       public override IEducation Education
+       {
+           get { return Education; }
+       }
+   }
 }

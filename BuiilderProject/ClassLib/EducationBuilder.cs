@@ -7,22 +7,26 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-    public abstract class EducationBuilder 
+    public abstract class EducationBuilder
     {
-        public IEducation Education
-        { get; set; }
-      
-        public virtual EducationDirector AssignTeacher()
+
+
+        public virtual void AssignTeacher()
         {
-            return "1";
+
         }
-        public virtual EducationDirector InviteStudents()
+
+        public virtual void InviteStudents()
         {
-            return "2";
+
         }
-        public virtual EducationDirector ProcessStudentFeedback()
+
+        public virtual void ProcessStudentFeedback()
         {
-            return "3";
+
         }
+
+        public abstract IEducation Education { get;  }
     }
+
 }

@@ -43,6 +43,7 @@
     <Compile Include="EducationDirector.cs" />
     <Compile Include="IEducation.cs" />
     <Compile Include="JensenBuilder.cs" />
+    <Compile Include="JensenDirector.cs" />
     <Compile Include="NackademinBuilder.cs" />
     <Compile Include="NackademinDirector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

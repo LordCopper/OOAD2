@@ -8,19 +8,24 @@ namespace ClassLib
 {
    public class NackademinBuilder : EducationBuilder
     {
-       public override string AssignTeacher()
+       public override void AssignTeacher()
        {
-           return base.AssignTeacher();
+           Education.AssignTeacher = "1";
        }
 
-       public override string InviteStudents()
+       public override void InviteStudents()
        {
-           return base.InviteStudents();
+           Education.InviteStudents = "2";
        }
 
-       public override string ProcessStudentFeedback()
+       public override void ProcessStudentFeedback()
        {
-           return base.ProcessStudentFeedback();
+           Education.ProcessStudentFeedback = "3";
+       }
+
+       public override IEducation Education
+       {
+           get { return Education; }
        }
     }
 }

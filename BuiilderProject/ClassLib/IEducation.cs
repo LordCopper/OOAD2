@@ -8,8 +8,8 @@ namespace ClassLib
 {
     public interface IEducation 
     {
-        string InviteStudents { get; }
-        string AssignTeacher { get; }
-        string ProcessStudentFeedback { get; }
+        string InviteStudents { get; set; }
+        string AssignTeacher { get; set; }
+        string ProcessStudentFeedback { get; set; }
     }
 }
