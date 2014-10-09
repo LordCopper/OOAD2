@@ -17,11 +17,13 @@ namespace BuilderProject
             string expectedteacher = "Kurt";
             string expectedstudents = "200";
             string expectedProcessStudentFeedback = "Good";
+
             string actualteacher = education.AssignTeacher;
             string actualstudents = education.InviteStudents;
             string actualFeedback = education.ProcessStudentFeedback;
+
             Assert.AreEqual(expectedteacher, actualteacher);
-            Assert.AreEqual(expectedstudents, expectedstudents);
+            Assert.AreEqual(expectedstudents, actualstudents);
             Assert.AreEqual(expectedProcessStudentFeedback, actualFeedback);
         }
 
@@ -38,7 +40,7 @@ namespace BuilderProject
             string actualstudents = education.InviteStudents;
             string actualFeedback = education.ProcessStudentFeedback;
             Assert.AreEqual(expectedteacher, actualteacher);
-            Assert.AreEqual(expectedstudents, expectedstudents);
+            Assert.AreEqual(expectedstudents, actualstudents);
             Assert.AreEqual(expectedProcessStudentFeedback, actualFeedback);
         }
     }
