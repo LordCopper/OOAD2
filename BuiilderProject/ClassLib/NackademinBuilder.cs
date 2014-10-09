@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-   public class Nackademin : EducationBuilder
+   public class NackademinBuilder : EducationBuilder
     {
        public override string AssignTeacher()
        {

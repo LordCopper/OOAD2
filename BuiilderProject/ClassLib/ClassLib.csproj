@@ -41,8 +41,10 @@
   <ItemGroup>
     <Compile Include="EducationBuilder.cs" />
     <Compile Include="EducationDirector.cs" />
-    <Compile Include="Jensen.cs" />
-    <Compile Include="Nackademin.cs" />
+    <Compile Include="IEducation.cs" />
+    <Compile Include="JensenBuilder.cs" />
+    <Compile Include="NackademinBuilder.cs" />
+    <Compile Include="NackademinDirector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

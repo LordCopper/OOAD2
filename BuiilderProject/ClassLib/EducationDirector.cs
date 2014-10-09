@@ -8,8 +8,10 @@ namespace ClassLib
 {
   public class EducationDirector
   {
-      public string AssignTeacher { get; set; }
-      public string InviteStudents { get; set; }
-      public string ProcessStudentFeedback { get; set; }
+      public virtual IEducation Build(EducationBuilder builder)
+      {
+
+      }
+     
  }
 }

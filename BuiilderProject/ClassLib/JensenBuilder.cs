@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-   public class Jensen : EducationBuilder
-    {
+   public class JensenBuilder : EducationBuilder
+   {
+       public override IEducation Education = new JensenEducation();
        public override string InviteStudents()
        {
-           return base.InviteStudents();
+          
        }
 
        public override string AssignTeacher()

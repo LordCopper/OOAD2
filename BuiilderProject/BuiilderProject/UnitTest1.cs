@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using ClassLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,7 +11,9 @@ namespace BuilderProject
         [TestMethod]
         public void TestAssignTeacher()
         {
-            var testMethod = new Nackademin();
+            var builder = new NackademinBuilder();
+            var director = new NackademinDirector();
+            var education = director.Build(builder);
             string expected ="1";
             string actual = testMethod.AssignTeacher();
             Assert.AreEqual(expected, actual);
