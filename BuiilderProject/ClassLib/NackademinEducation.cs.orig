@@ -8,9 +8,10 @@ namespace ClassLib
 {
     public class NackademinEducation : IEducation
     {
-        public string InviteStudents { get; set; }
-        public string AssignTeacher { get; set; }
-        public string ProcessStudentFeedback { get; set; }
+<<<<<<< HEAD
+        //public string InviteStudents {
+        //    get { return "200"; }
+            
         //}
         //public string AssignTeacher 
         //{
@@ -20,6 +21,11 @@ namespace ClassLib
         //{
         //    get { return "Good"; }
         //}
+=======
+        public string InviteStudents { get; set; }
+        public string AssignTeacher { get; set; }
+        public string ProcessStudentFeedback { get; set; }
+>>>>>>> d3de3ac7ff60fa13c6c351d955ba654e4e67d92e
     }
 
 }
