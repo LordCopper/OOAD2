@@ -8,7 +8,7 @@ namespace ClassLib
 {
    public class JensenBuilder : EducationBuilder
    {
-       private IEducation education = new NackademinEducation();
+       private IEducation education = new EducationJensen();
 
        public override void AssignTeacher()
        {
