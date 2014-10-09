@@ -10,17 +10,17 @@ namespace ClassLib
     {
        public override void AssignTeacher()
        {
-           Education.AssignTeacher = "1";
+           Education.AssignTeacher = "Kurt";
        }
 
        public override void InviteStudents()
        {
-           Education.InviteStudents = "2";
+           Education.InviteStudents = "200";
        }
 
        public override void ProcessStudentFeedback()
        {
-           Education.ProcessStudentFeedback = "3";
+           Education.ProcessStudentFeedback = "Good";
        }
 
        public override IEducation Education

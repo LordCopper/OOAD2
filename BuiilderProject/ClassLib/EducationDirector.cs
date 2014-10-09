@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-  public class EducationDirector
+  public abstract class EducationDirector
   {
-      public virtual IEducation Build(EducationBuilder builder)
-      {
+      public abstract IEducation Build(EducationBuilder builder);
 
-      }
-     
- }
+
+  }
 }

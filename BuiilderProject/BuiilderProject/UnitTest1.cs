@@ -9,16 +9,23 @@ namespace BuilderProject
     public class UnitTest1
     {
         [TestMethod]
-        public void TestAssignTeacher()
+        public void TestAssignTeacherNackademin()
         {
-            ////var builder = new NackademinBuilder();
-            ////var director = new NackademinDirector();
-            //var education = director.Build(builder);
-            //string expected ="1";
-            //string actual = builder.AssignTeacher();
-            //Assert.AreEqual(expected, actual);
+            var builder = new NackademinBuilder();
+            var director = new NackademinDirector();
+            var education = director.Build(builder);
+            string expectedteacher = "Kurt";
+            string expectedstudents = "200";
+            string expectedProcessStudentFeedback = "Good";
+            string actualteacher = education.AssignTeacher;
+            string actualstudents = education.InviteStudents;
+            string actualFeedback = education.ProcessStudentFeedback;
+            Assert.AreEqual(expectedteacher, actualteacher);
+            Assert.AreEqual(expectedstudents, expectedstudents);
+            Assert.AreEqual(expectedProcessStudentFeedback, actualFeedback);
+
         }
-        public void TestInviteStudents()
+        public void TestInviteStudentsNackademin()
         {
         
         }
