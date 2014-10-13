@@ -9,8 +9,9 @@ using ClassLibrary;
 namespace ProductAdapterLib
 {
 
-    public class AdapterClient : Product
+    public class AdapterClient : IProduct
     {
+       
         public AdapterClient(SomeExternalVendorProduct someExternalVendorProduct)
             : base(someExternalVendorProduct.PricePerUnit,
                 someExternalVendorProduct.EANCode,
@@ -18,5 +19,11 @@ namespace ProductAdapterLib
         {
 
         }
+
+        public decimal UnitPrice { get; set; }
+
+        public string BarCode { get; set; }
+        
+        public string Title { get; set; }
     }
 }
