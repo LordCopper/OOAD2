@@ -11,11 +11,12 @@ namespace ProductAdapterLib
 
     public class AdapterClient : Product
     {
-        public AdapterClient(SomeExternalVendorProduct someExternalVendorProduct) : base(someExternalVendorProduct.PricePerUnit,
-            someExternalVendorProduct.EANCode, 
-            someExternalVendorProduct.Description)
+        public AdapterClient(SomeExternalVendorProduct someExternalVendorProduct)
+            : base(someExternalVendorProduct.PricePerUnit,
+                someExternalVendorProduct.EANCode,
+                someExternalVendorProduct.Description)
         {
-            
+
         }
     }
 }

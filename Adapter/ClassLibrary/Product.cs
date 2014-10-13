@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public abstract class Product : IProduct
+    public class Product : IProduct
     {
         private decimal unitPrice;
         private string barCode;

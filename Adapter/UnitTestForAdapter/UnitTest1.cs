@@ -1,4 +1,5 @@
 ﻿using System;
+using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestForAdapter
@@ -9,7 +10,7 @@ namespace UnitTestForAdapter
         [TestMethod]
         public void TestProduct()
         {
-
+         
         }
 
         [TestMethod]
