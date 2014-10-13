@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary
+namespace ProductAdapterLib
 {
-    public abstract class Class1
+    public class Class1
     {
-   
     }
 }
