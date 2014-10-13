@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProductAdapterLib
 {
-    public class Class1
+    public abstract class AdapterClient
     {
-  
+    
     }
 }
