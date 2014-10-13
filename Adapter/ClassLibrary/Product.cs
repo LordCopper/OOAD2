@@ -8,8 +8,32 @@ namespace ClassLibrary
 {
     public abstract class Product : IProduct
     {
-        public decimal UnitPrice { get; set; }
-        public string BarCode { get; set; }
-        public string Title { get; set; }
+        private decimal unitPrice;
+        private string barCode;
+        private string title;
+
+        public Product(decimal unitPrice, string barCode, string title)
+        {
+            this.barCode = barCode;
+            this.title = title;
+            this.unitPrice = unitPrice;
+        }
+
+        public virtual decimal UnitPrice
+        {
+            get { return unitPrice; }
+        }
+
+        public virtual string BarCode
+        {
+            get { return barCode; }
+        }
+
+        public virtual string Title
+        {
+            get { return title; }
+
+        }
     }
+
 }
