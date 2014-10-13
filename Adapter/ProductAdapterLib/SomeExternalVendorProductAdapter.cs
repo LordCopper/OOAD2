@@ -15,7 +15,7 @@ namespace ProductAdapterLib
         public SomeExternalVendorProductAdapter(SomeExternalVendorProduct someExternalVendorProduct)
 
         {
-           
+          
         }
 
         public decimal UnitPrice
