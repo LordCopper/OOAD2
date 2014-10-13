@@ -19,17 +19,17 @@ namespace ClassLibrary
             this.unitPrice = unitPrice;
         }
 
-        public virtual decimal UnitPrice
+        public decimal UnitPrice
         {
             get { return unitPrice; }
         }
 
-        public virtual string BarCode
+        public string BarCode
         {
             get { return barCode; }
         }
 
-        public virtual string Title
+        public string Title
         {
             get { return title; }
 
