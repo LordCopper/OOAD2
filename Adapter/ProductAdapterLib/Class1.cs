@@ -8,5 +8,6 @@ namespace ProductAdapterLib
 {
     public class Class1
     {
+  
     }
 }

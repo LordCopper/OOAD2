@@ -7,8 +7,16 @@ namespace UnitTestAdapter
     public class ProductTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestProduct()
         {
+        
         }
+
+        [TestMethod]
+        public void TestSomeExternalVendorProduct()
+        {
+
+        }
+
     }
 }
