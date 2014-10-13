@@ -11,30 +11,32 @@ namespace ProductAdapterLib
 
     public class SomeExternalVendorProductAdapter : IProduct
     {
-        private decimal unitPrice;
-        private string barCode;
-        private string title;
+        //private decimal unitPrice;
+        //private string barCode;
+        //private string title;
+        private SomeExternalVendorProduct _someExternalVendorProduct;
 
         public SomeExternalVendorProductAdapter(SomeExternalVendorProduct someExternalVendorProduct)
         {
-            unitPrice = someExternalVendorProduct.PricePerUnit;
-            barCode = someExternalVendorProduct.EANCode;
-            title = someExternalVendorProduct.Description;
+            _someExternalVendorProduct = someExternalVendorProduct;
+            //unitPrice = someExternalVendorProduct.PricePerUnit;
+            //barCode = someExternalVendorProduct.EANCode;
+            //title = someExternalVendorProduct.Description;
         }
 
         public decimal UnitPrice
         {
-            get { return unitPrice; }
+            get { return _someExternalVendorProduct.PricePerUnit; }
         }
 
         public string BarCode
         {
-            get { return barCode; }
+            get { return _someExternalVendorProduct.EANCode; }
         }
 
         public string Title
         {
-            get { return title; }
+            get { return _someExternalVendorProduct.Description; }
 
         }
     }
