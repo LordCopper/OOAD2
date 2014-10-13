@@ -13,5 +13,6 @@ namespace ClassLib
        public virtual void InviteStudents(){}
        public virtual void ProcessStudentFeedback(){}
        public abstract IEducation Education { get;  }
+
     }
 }
